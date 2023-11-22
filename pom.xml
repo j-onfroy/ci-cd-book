@@ -9,7 +9,7 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.company</groupId>
-    <artifactId>cicd-jenkins</artifactId>
+    <artifactId>cicd-book</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>cicd-jenkins</name>
     <description>cicd-jenkins</description>
@@ -61,6 +61,7 @@
                 </configuration>
             </plugin>
         </plugins>
+        <finalName>cicd-book</finalName>
     </build>
 
 </project>
