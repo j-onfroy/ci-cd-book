@@ -7,7 +7,7 @@ phases:
       - mvn clean install
       - echo Logging in to Amazon ECR...
       - aws --version
-      - aws ecr get-login-password --region $AWS_DEFAULT_REGION --no-include-email
+      - $(aws ecr get-login-password --region $AWS_DEFAULT_REGION --no-include-email)
       - REPOSITORY_URI=151530941252.dkr.ecr.us-east-1.amazonaws.com/docker-book-registry-example
       - COMMIT_HASH=$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | cut -c 1-7)
       - IMAGE_TAG=build-$(echo $CODEBUILD_BUILD_ID | awk -F":" '{print $2}')
@@ -28,5 +28,5 @@ phases:
       - cat imagedefinitions.json
 artifacts:
   files:
-   - imagedefinitions.json
-   - target/cicd-book.jar
+    - imagedefinitions.json
+    - target/cicd-book.jar
