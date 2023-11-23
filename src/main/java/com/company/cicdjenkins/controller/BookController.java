@@ -5,10 +5,7 @@ import com.company.cicdjenkins.model.Book;
 import com.company.cicdjenkins.repository.BookRepository;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -25,5 +22,10 @@ public class BookController {
     @GetMapping
     public List<Book> all() {
         return bookRepository.findAll();
+    }
+
+    @DeleteMapping("/{id}")
+    public void delete(@PathVariable String id) {
+        bookRepository.deleteById(id);
     }
 }
