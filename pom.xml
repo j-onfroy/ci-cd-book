@@ -61,7 +61,7 @@
                 </configuration>
             </plugin>
         </plugins>
-        <finalName>cicd-book</finalName>
+        <finalName>ci-cd-book</finalName>
     </build>
 
 </project>
