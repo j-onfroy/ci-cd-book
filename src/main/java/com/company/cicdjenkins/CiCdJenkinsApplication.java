@@ -7,7 +7,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class CiCdJenkinsApplication {
 
     public static void main(String[] args) {
-
         SpringApplication.run(CiCdJenkinsApplication.class, args);
     }
 
