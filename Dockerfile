@@ -9,7 +9,7 @@ COPY src /app/src
 RUN mvn clean package -DskipTests
 
 # Stage 2: Create a lightweight image with the JAR file
-FROM adoptopenjdk:17-jre AS runtime
+FROM openjdk:17-jre AS runtime
 WORKDIR /app
 COPY --from=build /app/target/ci-cd-book.jar /app/ci-cd-book.jar
 EXPOSE 8080
