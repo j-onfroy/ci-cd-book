@@ -21,4 +21,4 @@ jobs:
     - name: Build the Docker image
       run: docker build -t ci-cd-book .
     - name: Push to Dockerhub
-      run: docker push j-onfroy/ci-cd-book:latest
+      run: docker push doniy/ci-cd-book:latest
