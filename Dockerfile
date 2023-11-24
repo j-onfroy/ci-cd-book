@@ -12,5 +12,5 @@ FROM openjdk:17-oracle
 
 WORKDIR /app
 
-COPY --from=build /app/target/ci-cd-book.jar /app/ci-cd-book.jar
+COPY --from=MAVEN_BUILD /build/target/ci-cd-book.jar /app/
 CMD ["java", "-jar", "ci-cd-book.jar"]
