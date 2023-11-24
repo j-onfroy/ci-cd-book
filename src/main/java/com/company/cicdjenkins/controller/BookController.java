@@ -3,7 +3,6 @@ package com.company.cicdjenkins.controller;
 
 import com.company.cicdjenkins.model.Book;
 import com.company.cicdjenkins.repository.BookRepository;
-import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
