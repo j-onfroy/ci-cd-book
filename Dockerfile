@@ -1,16 +1,16 @@
-# Stage 1: Build the application using Maven
-FROM maven:4.0.0-openjdk-17 AS build
-WORKDIR /app
-COPY pom.xml .
-RUN mvn dependency:go-offline
+FROM maven:3.9-eclipse-temurin-17-alpine AS MAVEN_BUILD
 
-# Copy the source code and build the application
-COPY src /app/src
-RUN mvn clean package -DskipTests
+MAINTAINER B29
 
-# Stage 2: Create a lightweight image with the JAR file
-FROM openjdk:17-jre AS runtime
+COPY pom.xml /build/
+COPY src /build/src/
+
+WORKDIR /build/
+RUN mvn package
+
+FROM openjdk:17-oracle
+
 WORKDIR /app
+
 COPY --from=build /app/target/ci-cd-book.jar /app/ci-cd-book.jar
-EXPOSE 8080
 CMD ["java", "-jar", "ci-cd-book.jar"]
