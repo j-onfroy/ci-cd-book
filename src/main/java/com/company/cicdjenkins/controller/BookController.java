@@ -17,6 +17,7 @@ public class BookController {
     public Book add(@RequestBody Book book) {
 
         return bookRepository.save(book);
+
     }
 
     @GetMapping
